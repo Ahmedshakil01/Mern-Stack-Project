@@ -1,19 +1,22 @@
 const validator = require('validator')
 
-const validate = user =>{
+const validate = user => {
     let error = {}
-   
-    if(!user.email){
-        error.email = 'Please provide your email'
-    }else if(!validator.isEmail(user.email)){
-        error.email = 'Please provide a valid email'
+
+    if (!user.email) {
+        error.email = 'Please Provide Your Email'
+    } else if (!validator.isEmail(user.email)) {
+        error.email = 'Please Provide a Valid Email'
     }
-    if(!user.password){
-        error.password = 'Please provide a Password'
+
+    if (!user.password) {
+        error.password = 'Please Provide a Password'
     }
-    return{
+
+    return {
         error,
-        isValid: Object.keys(error).length===0
+        isValid: Object.keys(error).length === 0
     }
 }
+
 module.exports = validate

@@ -1,23 +1,22 @@
 import * as Types from '../actions/types'
 
-
-const init ={
+const init = {
     isAuthenticated: false,
     user: {},
     error: {}
 }
 
-const authReducer = (state=init, action) =>{
-    switch(action.types){
+const authReducer = (state=init, action) => {
+    switch (action.type) {
         case Types.SET_USER: {
-            return{
+            return {
                 user: action.payload.user,
-                isAuthenticated: Object.keys(action.payload.user).length === 0,
+                isAuthenticated: Object.keys(action.payload.user).length !== 0,
                 error: {}
             }
         }
         case Types.USERS_ERROR: {
-            return{
+            return {
                 ...state,
                 error: action.payload.error
             }
@@ -26,4 +25,4 @@ const authReducer = (state=init, action) =>{
     }
 }
 
-export default authReducer;
+export default authReducer
