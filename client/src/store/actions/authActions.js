@@ -1,10 +1,10 @@
-import Axios from 'axios'
+import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 import * as Types from './types'
 import setAuthToken from '../../utils/setAuthToken'
 
 export const register = (user, history) => dispatch => {
-    Axios.post('/api/users/register', user)
+    axios.post('http://localhost:4000/api/users/register', user)
         .then((res) => {
             dispatch({
                 type: Types.USERS_ERROR,
@@ -26,7 +26,7 @@ export const register = (user, history) => dispatch => {
 }
 
 export const login = (user, history) => dispatch => {
-    Axios.post('/api/users/login', user)
+    axios.post('http://localhost:4000/api/users/login', user)
         .then(res => {
             let token = res.data.token
             localStorage.setItem('auth_token', token)

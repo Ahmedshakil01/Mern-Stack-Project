@@ -51,7 +51,7 @@ module.exports = {
         // Generate Token and Response Back
     },
     register(req, res) {
-        let { name, email, password, confirmPassword } = req.body
+        let { name, email, password, confirmPassword } =req.body
         let validate = registerValidator({ name, email, password, confirmPassword })
         
         if (!validate.isValid) {
