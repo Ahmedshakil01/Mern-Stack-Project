@@ -48,7 +48,7 @@ class Navigation extends React.Component {
                                     </li>
                                 </React.Fragment>
                                 : <React.Fragment>
-                                    <li className='nav-item'>
+                                    <li className='nav-item '>
                                         <NavLink to='/login' activeClassName='active'>
                                             <span className='nav-link'>
                                                 Login

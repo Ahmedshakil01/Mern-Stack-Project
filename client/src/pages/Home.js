@@ -2,13 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { logout } from '../store/actions/authActions'
+import Card from "./Card"
+import Footer from "./Footer"
 
 class Home extends React.Component {
     render() {
         return (
             <div>
-                <h1>I am Home</h1>
-                {
+                <Card/>
+                <Footer/>
+                {/* {
                     this.props.auth.isAuthenticated ? 
                         <button
                             className='btn btn-danger'
@@ -17,7 +20,7 @@ class Home extends React.Component {
                             Logout
                         </button> :
                         <Link to='/login'><button className='btn btn-success'> Login </button></Link>
-                }
+                } */}
             </div>
         )
     }

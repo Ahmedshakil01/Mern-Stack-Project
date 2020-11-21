@@ -47,6 +47,7 @@ class Dashboard extends React.Component {
     render() {
         let {auth, transactions} = this.props
         return (
+        
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                     <h1>Welcome {auth.user.name} </h1>
@@ -78,6 +79,7 @@ class Dashboard extends React.Component {
                     </ul> : <p>There is no transaction</p>}
                 </div>
             </div>
+            
         )
     }
 }

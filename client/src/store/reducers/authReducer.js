@@ -17,7 +17,7 @@ const authReducer = (state=init, action) => {
         }
         case Types.USERS_ERROR: {
             return {
-                ...state,
+                 ...state, //copy of the previous state.this why ...state use kora hoise
                 error: action.payload.error
             }
         }
